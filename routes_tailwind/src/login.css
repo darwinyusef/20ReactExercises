@@ -1,0 +1,183 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.login {
+  position: relative;
+  margin: 0 auto;
+  width: 380px;
+  padding: 90px;
+  height: auto;
+  border-radius: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  -webkit-box-shadow: 2px -1px 18px 0px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 2px -1px 18px 0px rgba(0, 0, 0, 0.33);
+  box-shadow: 2px -1px 18px 0px rgba(0, 0, 0, 0.33);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  margin-bottom: 30px;
+}
+
+.logo img:nth-child(1) {
+  width: 90px;
+}
+
+.logo img:nth-child(2) {
+  width: 270px;
+}
+
+.hidden {
+  display: none;
+}
+.input {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.input input::placeholder {
+  color: lightgray;
+  opacity: 1;
+}
+
+.input input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.input label {
+  font-family: "Inter", sans-serif;
+  font-weight: regular;
+  color: rgb(130, 130, 130);
+  font-size: 14px;
+}
+
+.input p {
+  font-size: 10px;
+  color: lightgray;
+  font-weight: bold;
+}
+
+.input input {
+  outline: none !important;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  height: 40px;
+  padding: 5px;
+  box-shadow: 0 0 0px transparent;
+}
+
+.input input:active,
+.input input:focus {
+  padding: 2px solid lightgray;
+}
+
+.input input[type="text"]:focus,
+.input input[type="text"]:active {
+  border: 2px solid lightgray;
+}
+
+/*Input Error*/
+
+.error input {
+  border: 2px solid red;
+}
+
+.error input:active,
+.error input:focus {
+  padding: 2px solid red !important; /*for firefox and chrome*/
+}
+
+.error input[type="text"]:focus,
+.error input[type="text"]:active {
+  border: 2px solid red !important;
+}
+
+.error input::placeholder {
+  color: red;
+  opacity: 1;
+}
+
+.error input::-ms-input-placeholder {
+  color: red;
+}
+
+.error label,
+.error p {
+  color: red;
+  display: block;
+}
+
+/*A5A5A5 placeholdre*/
+
+.login img {
+  width: 100px;
+}
+
+.loginFooter {
+  display: flex;
+  justify-content: space-around;
+  width: 380px;
+}
+
+button.btn-login {
+  width: 300px;
+  background: #2756a5;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+button.btn-login:hover {
+  background: #102e60;
+}
+
+.general-error {
+  border: 2px solid red;
+}
+
+.general-error .logo img:nth-child(1) {
+  filter: hue-rotate(142deg) brightness(1.8);
+}
+
+.general-error button.btn-login {
+  background: red !important;
+}
+
+.general-error button.btn-login:hover {
+  background: rgb(94, 1, 1) !important;
+}
+
+.loginFooter span {
+  font-family: "Inter", sans-serif;
+  font-weight: regular;
+  font-size: 14px;
+  margin-top: 20px;
+  color: lightgray;
+  cursor: no-drop;
+}
