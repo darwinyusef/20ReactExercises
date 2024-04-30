@@ -5,8 +5,9 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Login from './Login';
+import BoardGame from './BoardGame';
 
-
+localStorage.setItem('login', 'logueado')
 function App() {
   if (localStorage.getItem('login') == 'logueado') {
     return (
@@ -18,6 +19,7 @@ function App() {
               <li className='p-2 bg-slate-400 rounded-lg'><Link to="/">Inicio</Link></li>
               <li className='p-2 bg-slate-400 rounded-lg'><Link to="/about">Acerca de</Link></li>
               <li className='p-2 bg-slate-400 rounded-lg'><Link to="/contact">Contacto</Link></li>
+              <li className='p-2 bg-slate-400 rounded-lg'><Link to="/board">Board</Link></li>
             </ul>
           </nav>
 
@@ -27,6 +29,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/board" element={<BoardGame />} />
           </Routes>
         </>
       </BrowserRouter>

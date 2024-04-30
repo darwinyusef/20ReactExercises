@@ -1,0 +1,49 @@
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 80vh;
+  width: 100vw;
+}
+
+.initName {
+  display: flex;
+  background-color: red;
+  width: 76vw;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 340px; /* x5 820 x4 650 x3 500 x2 340  */
+}
+
+.cell {
+  width: 150px;
+  border-radius: 20px;
+  border: 2px solid blue;
+  background-color: aliceblue;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+
+.cell:hover {
+  background-color: rgb(159, 159, 159);
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: 2px solid blue;
+}
+
+.cell:active {
+    background-color: red;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    border: 2px solid blue;
+  }
