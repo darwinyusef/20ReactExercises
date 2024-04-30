@@ -23,8 +23,6 @@ const Login = () => {
         const { target } = event;
         console.log(target);
         const { name, value } = target;
-
-
         setFormData({
             ...formData, // Keep existing form data
             [name]: value // Update form data for the input field that changed
@@ -64,8 +62,6 @@ const Login = () => {
                 </div>
             </form>
         </>
-
-
     )
 }
 
