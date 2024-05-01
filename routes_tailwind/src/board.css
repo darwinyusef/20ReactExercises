@@ -5,19 +5,20 @@
   vertical-align: middle;
   height: 80vh;
   width: 100vw;
+  padding-top: 20%;
 }
 
 .initName {
   display: flex;
   background-color: red;
-  width: 76vw;
+  width: 80vw;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   padding: 10px;
   border-radius: 20px;
-  max-width: 340px; /* x5 820 x4 650 x3 500 x2 340  */
+  max-width: 650px; /* x5 820 x4 650 x3 500 x2 340  */
 }
 
 .cell {

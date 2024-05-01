@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import './board.css';
 import lv1 from './datas/lv1.json';
-
+import lv2 from './datas/lv2.json';
 
 const BoardGame = () => {
-    const board = lv1;
+    const board = lv2;
     const [element, setElements] = useState(board);
     const [closeBtn, setCloseBtn] = useState(['none', '']);
 
