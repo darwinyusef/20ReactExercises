@@ -4,27 +4,83 @@ import lv1 from './datas/lv1.json';
 
 
 const BoardGame = () => {
-    const [element, setElements] = useState([]);
     const board = lv1;
+    const [element, setElements] = useState(board);
+    const [closeBtn, setCloseBtn] = useState(['none', '']);
 
-    let handleClick = (e) => {
-        e.preventDefault();
-        const item = e.target.dataset.title
-        if (element[0] != "") {
-            setElements([item, ""])
-        } else if (element[""] != "") {
-            setElements([...element, item])
+    let handleClick = (event, index) => {
+        event.preventDefault();
+        if (element[index]['status'] == "close") {
+            element[index]['status'] = "open";
+            setElements([...element])
         }
 
-        console.log(element);
+        let val = validateRelation(element);
+        if (val != null) {
+            setElements([...val])
+        }
     }
+
+    let validateRelation = (el) => {
+        let info = el.filter((r) => {
+            return r.status == "open"
+        });
+        if (info.length == 2) {
+            if (info[1]['title']) {
+
+                if (info[0]['title'] == info[1]['title']) {
+                    setCloseBtn(['flex', info[0]['descript']]);
+                    setTimeout(() => {
+                        setCloseBtn(['none', '']);
+                    }, 6000);
+                    return reset(el, true);
+                } else {
+                    setTimeout(() => {
+                        reset(el, false);
+                    }, 2000);
+                }
+            }
+        } else {
+            return null
+        }
+    }
+
+    let reset = (el, type) => {
+        const fin = [];
+        if (type) {
+            el.map((r) => {
+                if (r.status == "open") {
+                    r.status = "win";
+                    fin.push(r)
+                } else {
+                    fin.push(r)
+                }
+            })
+        } else {
+            el.map((r) => {
+                if (r.status == "open") {
+                    r.status = "close";
+                    fin.push(r)
+                } else {
+                    fin.push(r)
+                }
+            })
+        }
+
+        return fin;
+    }
+
+    let close = () => {
+        setCloseBtn(['none', '']);
+    }
+
     return (
         <div className='board'>
             <section className='initName'>
                 {
-                    board.map((res, index) => {
+                    element.map((res, index) => {
                         return (
-                            <div className="cell" data-id={res.id} data-title={res.title} key={index} style={{ 'order': res.order }} onClick={handleClick}>
+                            <div className={`cell ${(res.status == 'open') ? 'open' : ""} ${(res.status == 'win') ? "win" : ""} ${(res.status == "close") ? "close" : ""}`} key={index} style={{ 'order': res.order }} onClick={(event) => handleClick(event, index)}>
                                 <span className='content'>
                                     {res.title}
                                 </span>
@@ -33,6 +89,10 @@ const BoardGame = () => {
                     })
                 }
             </section>
+            <div className="ms" style={{ display: closeBtn[0] }}>
+                <p>{closeBtn[1]}</p>
+                <span onClick={close}>x</span>
+            </div>
         </div>
     )
 }

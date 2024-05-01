@@ -23,8 +23,6 @@
 .cell {
   width: 150px;
   border-radius: 20px;
-  border: 2px solid blue;
-  background-color: aliceblue;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -33,17 +31,88 @@
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
-  transition: 0.2s all;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  background-color: aliceblue;
+  border: 2px solid blue;
+  transition: all 0.8s ease;
 }
 
-.cell:hover {
-  background-color: rgb(159, 159, 159);
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+.cell.close {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.cell.close::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -2px;
+  left: -2px;
+  z-index: 0;
+  background: yellow;
   border: 2px solid blue;
+  border-radius: 20px;
 }
 
 .cell:active {
-    background-color: red;
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-    border: 2px solid blue;
-  }
+  background-color: yellow;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: 2px solid blue;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.cell.open {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.cell.open::before {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  z-index: -4;
+  background: transparent;
+}
+
+.cell.win {
+  visibility: hidden;
+}
+
+.ms {
+  
+  background: white;
+  border: 2px solid red;
+  position: fixed;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  width: auto;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+
+.ms p {
+  text-align: left;
+  font-size: 12px;
+}
+
+.ms span {
+  padding: 5px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: red;
+  margin-left: 10px;
+}
+
+
+.ms span:hover {
+  color: black;
+}
