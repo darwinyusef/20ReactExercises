@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './board.css';
 import lv1 from './datas/lv1.json';
 
 
 const BoardGame = () => {
-    const board = lv1;
+    const board = [...lv1];
     const [element, setElements] = useState(board);
     const [closeBtn, setCloseBtn] = useState(['none', '']);
 
@@ -74,26 +74,43 @@ const BoardGame = () => {
         setCloseBtn(['none', '']);
     }
 
+    let gameReset = () => {
+        const fin = [];
+        element.map((r) => {
+            if (r.status == "open" || r.status == "win" || r.status == "close") {
+                r.status = "close";
+                fin.push(r)
+            }
+        })
+        setElements([...fin])
+    }
+
     return (
-        <div className='board'>
-            <section className='initName'>
-                {
-                    element.map((res, index) => {
-                        return (
-                            <div className={`cell ${(res.status == 'open') ? 'open' : ""} ${(res.status == 'win') ? "win" : ""} ${(res.status == "close") ? "close" : ""}`} key={index} style={{ 'order': res.order }} onClick={(event) => handleClick(event, index)}>
-                                <span className='content'>
-                                    {res.title}
-                                </span>
-                            </div>
-                        )
-                    })
-                }
-            </section>
-            <div className="ms" style={{ display: closeBtn[0] }}>
-                <p>{closeBtn[1]}</p>
-                <span onClick={close}>x</span>
+        <>
+            <div className='board'>
+                <section className='initName'>
+                    {
+                        element.map((res, index) => {
+                            return (
+                                <div className={`cell ${(res.status == 'open') ? 'open' : ""} ${(res.status == 'win') ? "win" : ""} ${(res.status == "close") ? "close" : ""}`} key={index} style={{ 'order': res.order }} onClick={(event) => handleClick(event, index)}>
+                                    <span className='content'>
+                                        {res.title}
+                                    </span>
+                                </div>
+                            )
+                        })
+                    }
+                </section>
+
+                <div className="ms" style={{ display: closeBtn[0] }}>
+                    <p>{closeBtn[1]}</p>
+                    <span onClick={close}>x</span>
+                </div>
             </div>
-        </div>
+            <div className='w-full flex justify-center'>
+                <button onClick={gameReset} className='w-36 bg-red-700 text-white font-bold rounded-lg mb-7'> Resetear </button>
+            </div>
+        </>
     )
 }
 
