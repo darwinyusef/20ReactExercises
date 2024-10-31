@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 45%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --chart-1: 173 58% 39%;
+        --chart-2: 12 76% 61%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+      }
+      img[src="/placeholder.svg"],
+      img[src="/placeholder-user.jpg"] {
+        filter: sepia(0.3) hue-rotate(-60deg) saturate(0.5) opacity(0.8);
+      }
+    </style>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Inter", sans-serif;
+        --font-sans-serif: "Inter";
+      }
+    </style>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        --font-sans-serif: "Inter";
+      }
+      #frontend,
+      #databases,
+      #backend {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      #frontend img,
+      #backend img,
+      #databases img {
+        width: 70px;
+      }
+      .img_bloque {
+        width: 100vw;
+        position: relative;
+        min-height: 30vh;
+      }
+      .img_bloque h1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        min-width: fit-content;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        transform: translate(-50%, -50%);
+        font-size: clamp(2rem, 10vw + 2rem, 5rem);
+        font-weight: 900;
+        color: rgb(204, 214, 8);
+        text-shadow: 0 0 0.1em #0009;
+        -webkit-box-reflect: below 0 linear-gradient(transparent, #fff3);
+        text-transform: uppercase;
+        mix-blend-mode: lighten;
+        line-height: 0.7;
+        border-bottom: 2px solid #0005;
+      }
+      .img_bloque img {
+        display: none;
+        visibility: none;
+      }
+      .img_bloque {
+        background-image: url(img/programming.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 40%;
+        filter: grayscale(0.9) brightness(0.8);
+      }
+      #profile-picture {
+        width: 150px;
+        border-radius: 50%;
+        filter: grayscale(100%);
+        -webkit-transition: 1s -webkit-filter linear;
+        -moz-transition: 1s -moz-filter linear;
+        -moz-transition: 1s filter linear;
+        -ms-transition: 1s -ms-filter linear;
+        -o-transition: 1s -o-filter linear;
+        transition: 1s filter linear, 1s -webkit-filter linear;
+      }
+      #profile-picture:hover {
+        filter: grayscale(0%);
+      }
+      .grayscale {
+        filter: grayscale(100%);
+        cursor: pointer;
+      }
+
+      .grayscale:hover {
+        filter: grayscale(0%);
+      }
+      audio {
+        width: 40%;
+        height: 20px;
+        margin: 10px 0;
+      }
+      audio::-webkit-media-controls-panel {
+        background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+        color: black !important;
+      }
+    </style>
+    <div class="flex flex-col min-h-[100dvh] bg-background text-foreground">
+      <header
+        class="px-4 lg:px-6 py-4 flex items-center justify-between border-b"
+      >
+        <div class="flex items-center gap-2">
+          <div class="flex justify-center">
+            <div
+              class="bg-red-700 text-white rounded-full w-10 h-10 flex justify-center items-center"
+            >
+              <span class="text-2xl font-bold">DY</span>
+            </div>
+          </div>
+          <div class="text-sm text-muted-foreground">
+            Software Engineer - Fullstack Developer
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            Curriculum
+          </a>
+
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            Aquicreamos Blog
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-6" src="./social/linkedin.svg" alt="linkedin" />
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-6" src="./social/x.svg" alt="x" />
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-6" src="./social/instagram.svg" alt="instagram" />
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-6" src="./social/github.svg" alt="linkedin" />
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-6" src="./social/whatsapp.svg" alt="whatsapp" />
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            rel="ugc"
+          >
+            <img class="w-8" src="./social/youtube.svg" alt="linkedin" />
+          </a>
+        </div>
+      </header>
+      <div class="page-header img_bloque">
+        <h1>Curriculum Vitae</h1>
+        <img
+          src="img/programming.jpg"
+          alt="A desert scene. Deep orange sand and a cloudy sky, with craggy hills and mountains looming in the distance. "
+        />
+        <!-- Photo by Juli Kosolapova for Unsplash. https://unsplash.com/photos/pZ-XFIrJMtE -->
+      </div>
+      <section
+        class="mt-12 md:mt-16 lg:mt-20 flex justify-center flex-1 items-center"
+      >
+        <img id="profile-picture" src="./img/personal.JPG" alt="" />
+        <div class="ml-5 space-y-2 text-start" data-id="3">
+          <h1
+            class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+            data-id="4"
+          >
+            Yusef Gonzalez Triana
+          </h1>
+          <p class="text-lg font-medium text-muted-foreground" data-id="5">
+            Software Engineer - Fullstack Developer
+          </p>
+        </div>
+      </section>
+      <main
+        class="flex justify-center flex-1 items-center py-12 md:py-16 lg:py-20"
+      >
+        <div class="container px-4 md:px-6">
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-3xl font-bold mb-4">Acerca de mi</h2>
+            <p class="text-muted-foreground">
+              Soy un Desarrollador Full Stack con más de 14 años de experiencia
+              en el diseño y desarrollo de soluciones tecnológicas. Como todos
+              los fullstack me especializo en Frontend que abarca tecnologías
+              como JavaScript (Vanilla JS y Angular), React JS, Next JS y Astro
+              JS. En el Backend, tengo una sólida experiencia en PHP (Laravel)
+              con más de 12 años de experiencia, además de habilidades en Python
+              (Flask y FastAPI), JavaScript (Node.js, Express y NestJS). También
+              tengo experiencia en bases de datos SQL (MySQL y PostgreSQL) y
+              NoSQL (Firebase, MongoDB, Supabase y Appwrite). Además, tengo
+              habilidades en desarrollo móvil con React Native y análisis de
+              datos utilizando Python con Pandas y NumPy. Mi trayectoria
+              profesional también incluye experiencia como Diseñador gráfico y
+              web, así como Multimedia Editor. Actualmente, soy un Youtuber
+              académico con un canal de YouTube y me desempeño como Instructor y
+              líder técnico de proyectos de software.
+            </p>
+          </section>
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-3xl font-bold mb-4">Work Experience</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Software Engineer</h3>
+                <p class="text-muted-foreground mb-1">
+                  Acme Inc. | 2020 - Present
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+                  <li>
+                    Developed and maintained complex web applications using
+                    React, Node.js, and SQL databases.
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams to design and
+                    implement new features and improvements.
+                  </li>
+                  <li>
+                    Participated in code reviews, testing, and deployment
+                    processes to ensure high-quality and reliable software.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Web Developer Intern</h3>
+                <p class="text-muted-foreground mb-1">
+                  XYZ Corp. | 2019 - 2020
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+                  <li>
+                    Contributed to the development and maintenance of the
+                    company's website and web applications.
+                  </li>
+                  <li>
+                    Gained experience in front-end and back-end technologies,
+                    including HTML, CSS, JavaScript, and PHP.
+                  </li>
+                  <li>
+                    Participated in team meetings and collaborated with
+                    designers and project managers.
+                  </li>
+                </ul>
+              </div>
+              <br />
+              <a
+                class="text-blue-500 font-bold text-sm font-medium hover:underline underline-offset-4"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Leer más</a
+              >
+            </div>
+          </section>
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-3xl font-bold mb-4">Education</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-bold mb-2">
+                  Bachelor of Science in Computer Science
+                </h3>
+                <p class="text-muted-foreground mb-1">
+                  University of Example | 2015 - 2019
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+                  <li>Graduated with a GPA of 3.8 out of 4.0.</li>
+                  <li>
+                    Participated in various hackathons and coding competitions.
+                  </li>
+                  <li>
+                    Served as a teaching assistant for several computer science
+                    courses.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">
+                  Bachelor of Science in Computer Science
+                </h3>
+                <p class="text-muted-foreground mb-1">
+                  University of Example | 2015 - 2019
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+                  <li>Graduated with a GPA of 3.8 out of 4.0.</li>
+                  <li>
+                    Participated in various hackathons and coding competitions.
+                  </li>
+                  <li>
+                    Served as a teaching assistant for several computer science
+                    courses.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br>
+            <a
+              class="text-blue-500 font-bold text-sm font-medium hover:underline underline-offset-4"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              >Leer más</a
+            >
+          </section>
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h1 class="text-4xl font-bold mb-4">Habilidades Tecnicas</h1>
+
+            <section id="professional-profile">
+              <h3
+                class="flex justify-center gap-4 text-4xl font-bold mb-12 mt-12 text-center"
+              >
+                Frontend
+              </h3>
+              <div
+                class="flex justify-center gap-4 mb-12 items-center flex-col"
+              >
+                <p class="text-muted-foreground">
+                  En el Frontend, tengo 12+ años de experiencia en maquetación
+                  con HTML5, CSS3 (Sass, Less, Tailwind css) y JavaScript
+                  (Vanilla, y mas de 9+ años en Angular, apartir de aqui he
+                  trabajado con herramientas como React, Next.js, Astro.js) Me
+                  enfoco en crear interfaces de usuario responsivas y
+                  accesibles, con un fuerte enfoque en testing (unitarios,
+                  storybook, Atomic Desing) y arquitecturas limpias
+                  desentralizadas, igualmente la colaboración con QA para
+                  garantizar la calidad siendo proactivo en la atención al
+                  detalle siendo eficientemente con QA para identificar y
+                  resolver problemas Estoy familiarizado con arquitecturas
+                  populares como SPA y SSR, SSG Trabajo SPA, SSR y SSG, estoy
+                  comprometido con la mejora continua para ofrecer las mejores
+                  soluciones. Mi experiencia me permite crear aplicaciones web
+                  escalables y eficientes, con una excelente experiencia de
+                  usuario comprobable con gran cantidad de proyectos realizados.
+                </p>
+                <audio id="audiofront" controls autoplay loop muted>
+                  <source src="audios/frontend.wav" type="audio/wav" />
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
+
+              <ul id="frontend"></ul>
+            </section>
+            <section id="professional-profile">
+              <h3 class="text-4xl font-bold mb-12 mt-6 text-center">Backend</h3>
+              <div
+                class="flex justify-center gap-4 mb-12 items-center flex-col"
+              >
+                <p class="text-muted-foreground">
+                  En el Backend, tengo 12+ años de experiencia en PHP (Laravel),
+                  4+ años de experiencia Python (Flask, FastAPI) y 3+ JavaScript
+                  (Node.js, Express). Me enfoco en crear aplicaciones web
+                  robustas y seguras, con un enfoque en testing (unitarios) y
+                  generando procesos de colaboración con QA para garantizar la
+                  calidad. Estoy familiarizado con arquitecturas populares.
+                  Trabajo eficientemente con QA para identificar y resolver
+                  problemas, tambien puedo apoyar en la gestión y diseño de
+                  Arquitecturas de software, documentación, bajo los más
+                  populares patrones de diseño, tambien en el buen uso del
+                  codigo, el uso de la IA Mi experiencia me permite gestionar el
+                  area del backend para llevar a su finalización los proyectos y
+                  ofrecer soluciones escalables y eficientes.
+                </p>
+                <audio id="audiofront" controls autoplay loop muted>
+                  <source src="audios/frontend.wav" type="audio/wav" />
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
+              <ul id="backend"></ul>
+            </section>
+            <section id="professional-profile">
+              <div
+                class="flex justify-center gap-4 mb-12 items-center flex-col"
+              >
+                <h3 class="text-4xl font-bold mb-12 mt-12 text-center">
+                  Bases de datos
+                </h3>
+                <p class="text-muted-foreground">
+                  Como Desarrollador Full Stack, Mi experiencia en en bases de
+                  datos abarca más de 12 años, puedo apoyar en la construcción,
+                  modelamiento y mantenimiento de bases de datos relacionales
+                  SQL (MySQL, PostgreSQL) y NoSQL (Firebase, MongoDB, Supabase,
+                  Appwrite). Diseño y desarrollo soluciones de almacenamiento de
+                  datos escalables y eficientes. y tengo habilidades en
+                  Firebase, MongoDB, Supabase y Appwrite. Mi objetivo es diseñar
+                  y desarrollar sistemas de almacenamiento de datos que se
+                  adapten a las necesidades de cada uno de los productos que
+                  desarrollo en el día a día.
+                </p>
+                <audio id="audiofront" controls autoplay loop muted>
+                  <source src="audios/frontend.wav" type="audio/wav" />
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
+              <ul id="databases"></ul>
+            </section>
+          </section>
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-3xl font-bold mb-4">Projects</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Personal Portfolio</h3>
+                <p class="text-muted-foreground mb-1">
+                  Developed a modern and responsive personal portfolio website
+                  using React, Next.js, and Tailwind CSS.
+                </p>
+                <div class="flex gap-2">
+                  <a
+                    class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    href="#"
+                    rel="ugc"
+                  >
+                    View Project
+                  </a>
+                  <a
+                    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    href="#"
+                    rel="ugc"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                <p class="text-muted-foreground mb-1">
+                  Designed and developed a full-stack e-commerce platform using
+                  React, Node.js, and a PostgreSQL database.
+                </p>
+                <div class="flex gap-2">
+                  <a
+                    class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    href="#"
+                    rel="ugc"
+                  >
+                    View Project
+                  </a>
+                  <a
+                    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    href="#"
+                    rel="ugc"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-3xl font-bold mb-4">References</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Jane Doe</h3>
+                <p class="text-muted-foreground mb-1">
+                  Software Engineering Manager, Acme Inc.
+                </p>
+                <p class="text-muted-foreground">
+                  "John is a talented and dedicated software engineer. He has\n
+                  consistently delivered high-quality work and has been a\n
+                  valuable asset to our team."
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">John Smith</h3>
+                <p class="text-muted-foreground mb-1">CTO, XYZ Corp.</p>
+                <p class="text-muted-foreground">
+                  "I had the pleasure of working with John during his
+                  internship\n at XYZ Corp. He demonstrated a strong technical
+                  aptitude and\n a willingness to learn. I highly recommend
+                  him."
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer
+        class="flex justify-center items-centerbg-muted px-4 md:px-6 py-6 border-t"
+      >
+        <div
+          class="container flex flex-col sm:flex-row items-center justify-between"
+        >
+          <p class="text-sm text-muted-foreground">
+            © 2024 Yusef Gonzalez Triana. All rights reserved.
+          </p>
+          <div class="flex gap-4 mt-4 sm:mt-0 items-center">
+            <ul class="flex gap-4 items-center">
+              <li>
+                <img class="w-6" src="./social/linkedin.svg" alt="linkedin" />
+              </li>
+              <li><img class="w-6" src="./social/x.svg" alt="x" /></li>
+              <li>
+                <img class="w-6" src="./social/instagram.svg" alt="instagram" />
+              </li>
+              <li>
+                <img class="w-6" src="./social/github.svg" alt="linkedin" />
+              </li>
+              <li>
+                <img class="w-8" src="./social/whatsapp.svg" alt="whatsapp" />
+              </li>
+              <li>
+                <img class="w-8" src="./social/youtube.svg" alt="linkedin" />
+              </li>
+            </ul>
+            <a
+              class="text-sm font-medium hover:underline underline-offset-4"
+              href="#"
+              rel="ugc"
+            >
+              wsgestor@gmail.com
+            </a>
+            <a
+              class="text-sm font-medium hover:underline underline-offset-4"
+              href="#"
+              rel="ugc"
+            >
+              + (57) 320 205 12 41
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      fetch(
+        "https://gist.githubusercontent.com/darwinyusef/d222ef4892f39367e3d0928e685baaa2/raw"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const professionalProfile = data.professional_profile;
+          /* const personalInformation = data.personal_information;
+          const education = data.education;
+          const courses = data.courses;
+          const workExperience = data.work_experience;
+          const personalReferences = data.personal_references;*/
+
+          /* document.getElementById("first-name").textContent =
+            personalInformation.first_name;
+          document.getElementById("last-name").textContent =
+            personalInformation.last_name;
+          document.getElementById("phone").textContent =
+            personalInformation.phone;
+          document.getElementById("email").textContent =
+            personalInformation.email;
+          document.getElementById("location").textContent =
+            personalInformation.location;*/
+
+          /* document.getElementById("summary").textContent =
+            professionalProfile.summary; */
+          const technologiesList = document.getElementById("frontend");
+          professionalProfile.frontend.forEach((technology) => {
+            const technologyListItem = document.createElement("li");
+            const imageTech = document.createElement("img");
+            imageTech.src = `img/${technology}.svg`;
+            technologiesList.appendChild(imageTech);
+          });
+
+          const technologiesList2 = document.getElementById("backend");
+          professionalProfile.backend.forEach((back) => {
+            const backListItem = document.createElement("li");
+            const imageTech = document.createElement("img");
+            imageTech.src = `img/${back}.svg`;
+            technologiesList2.appendChild(imageTech);
+          });
+
+          const databasesList = document.getElementById("databases");
+          professionalProfile.databases.forEach((db) => {
+            const dbListItem = document.createElement("li");
+            const imageTech = document.createElement("img");
+            imageTech.src = `img/${db}.svg`;
+            databasesList.appendChild(imageTech);
+          });
+
+          /* const educationList = document.getElementById("education-list");
+          education.forEach((educationItem) => {
+            const educationListItem = document.createElement("li");
+            educationListItem.textContent = `${educationItem.level} - ${educationItem.institution} - ${educationItem.duration}`;
+            educationList.appendChild(educationListItem);
+          });
+
+          const coursesList = document.getElementById("courses-list");
+          courses.forEach((course) => {
+            const courseListItem = document.createElement("li");
+            courseListItem.textContent = `${course.title} - ${course.institution} - ${course.date} - ${course.hours} horas`;
+            coursesList.appendChild(courseListItem);
+          });
+
+          const workExperienceList = document.getElementById(
+            "work-experience-list"
+          );
+          workExperience.forEach((experience) => {
+            const experienceListItem = document.createElement("li");
+            experienceListItem.textContent = `${experience.company} - ${experience.position} - ${experience.duration} - ${experience.supervisor}`;
+            workExperienceList.appendChild(experienceListItem);
+          });
+
+          const personalReferencesList = document.getElementById(
+            "personal-references-list"
+          );
+          personalReferences.forEach((reference) => {
+            const referenceListItem = document.createElement("li");
+            referenceListItem.textContent = `${reference.name} - ${reference.position} - ${reference.company} - ${reference.phone}`;
+            personalReferencesList.appendChild(referenceListItem);
+          });*/
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
