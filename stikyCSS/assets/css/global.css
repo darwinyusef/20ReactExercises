@@ -1,0 +1,113 @@
+@import url('./animations.css');
+@import url('./header-text.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.scroll-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding-block: 0px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scroll-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  background-color: lightcoral;
+  color: white;
+  border: 2px solid white;
+}
+
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.marquee span {
+  color: rgba(0, 0, 0, 0);
+  font-size: 6em;
+  text-transform: uppercase;
+  display: inline-block;
+
+}
+
+.marquee span:hover {
+  animation: marquee 80s linear infinite;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.text-drive {
+  overflow: hidden;
+  width: 100%;
+  height: 200px !important;
+}
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding-block: 0px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.mini-section {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: goldenrod;
+}
+
+.section:nth-child(odd),
+.scroll-section:nth-child(odd) {
+  background-color: lightblue;
+}
+
+.scroll-section:nth-child(odd) {
+  background-color: gold;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: lightgreen;
+  z-index: 1;
+}
+
+.front {
+  position: sticky;
+  z-index: 100;
+  margin-left: 720px;
+}
+
+
+@import url('./licenses.css');

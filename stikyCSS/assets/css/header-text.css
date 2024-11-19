@@ -1,0 +1,204 @@
+@import url("./animations.css");
+@import url("./fonts.css");
+
+.sour {
+  font-family: "Sour Gummy", sans-serif;
+}
+
+.quick {
+  font-family: "Quicksand", serif;
+}
+
+.section-alls-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 3vw;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: auto;
+  padding: 80px 40px;
+}
+
+.allButtons {
+  cursor: pointer;
+  opacity: 0.05;
+  z-index: 100;
+  position: absolute;
+  width: 460px;
+  bottom: 30px;
+  left: 30px;
+  border-radius: 20px;
+  padding: 20px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  cursor: pointer;
+}
+
+.allButtons:hover {
+  opacity: 1;
+}
+
+.buttons_title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.buttons_title h1 {
+  font-size: 30px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  border: 0px;
+  background: red;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.tag.verde {
+  background-color: green;
+}
+
+.tag.purpura {
+  background-color: purple;
+}
+
+.tag.rojo {
+  background-color: red;
+}
+
+.tag.cian {
+  background-color: darkblue;
+}
+
+.tag.gray {
+  background-color: gray;
+}
+
+.buttons_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-contents {
+  background-color: black !important;
+  height: auto !important;
+  position: relative;
+  font-size: 3vw !important;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.color {
+  opacity: 0.4;
+
+  color: white;
+  background-image: linear-gradient(
+    45deg,
+    #cecece 0%,
+    #333333 50%,
+    #ffffff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: all 0.8s ease-in-out;
+  margin-left: 20px;
+  filter: blur(3px) hue-rotate(360deg) brightness(0.5);
+}
+
+.stateA {
+  opacity: 0.6;
+  color: white;
+  background-image: linear-gradient(
+    45deg,
+    #cecece 0%,
+    #ffffff 50%,
+    #aaaaaa 100%
+  );
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  filter: blur(0px) hue-rotate(80deg) !important;
+}
+
+.f1 {
+  opacity: 1;
+  color: #8f1818b4;
+  background-image: linear-gradient(
+    45deg,
+    #ff0000 0%,
+    #ffa500 50%,
+    #ffff00 100%
+  );
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  filter: blur(0px) hue-rotate(80deg) !important;
+}
+
+.f2 {
+  opacity: 1;
+  color: #8f1818b4;
+  background-image: linear-gradient(
+    45deg,
+    #0000ff 0%,
+    #00ffff 50%,
+    #00ff00 100%
+  );
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  filter: blur(0px) hue-rotate(90deg) !important;
+}
+
+.f3 {
+  opacity: 1;
+  color: #8f1818b4;
+  background-image: linear-gradient(
+    45deg,
+    #800080 0%,
+    #ff00ff 50%,
+    #ff00ff 100%
+  );
+
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  filter: blur(0px) hue-rotate(40deg) !important;
+}
+
+.f4 {
+  opacity: 1;
+  color: goldenrod;
+  background-image: linear-gradient(
+    45deg,
+    #32cd32 0%,
+    #556b2f 50%,
+    #2f4f2f 100%
+  );
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  filter: blur(0px) hue-rotate(120deg) !important;
+}
