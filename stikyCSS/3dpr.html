@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Proyecto 3D</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module">
+        import { HDRLoader } from 'three/examples/jsm/loaders/HDRLoader';
+
+        // Cargar el archivo HDR
+        const loader = new HDRLoader();
+        loader.load('./urban_alley_01_1k.hdr', function (hdr) {
+            // Utilizar el archivo HDR como texto para un objeto 3D
+            const texture = new THREE.Texture(hdr);
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+
+            // Crear un objeto 3D y agregarlo a la escena
+            const mesh = new THREE.Mesh(new THREE.SphereGeometry(), material);
+            scene.add(mesh);
+
+            // Renderizar la escena
+            renderer.render(scene, camera);
+        });
+    </script>
+</body>
+
+</html>
