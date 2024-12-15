@@ -1,0 +1,9 @@
+{
+  "name": "typescript",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@types/three": "^0.93.15",
+    "three": "^0.100.0"
+  }
+}

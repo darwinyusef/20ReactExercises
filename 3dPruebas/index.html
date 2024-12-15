@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Model Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <!-- Scripts de librerías -->
+  <script src="https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gltf-loader@1.0.0/index.min.js"></script>
+
+  <!-- Tu script principal -->
+  <script>
+    // Configuración de Three.js
+    const container = document.getElementById('container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    // Luz
+    const light = new THREE.AmbientLight(0xffffff, 1);
+    scene.add(light);
+
+    // Cargar el modelo
+    const loader = new THREE.GLTFLoader();
+    let model;
+    loader.load('./elf_girl.glb', function (gltf) {
+      model = gltf.scene;
+      model.scale.set(1, 1, 1);
+      scene.add(model);
+      animate();
+    }, undefined, function (error) {
+      console.error('Error al cargar el modelo:', error);
+    });
+
+    // Configuración de la cámara
+    camera.position.z = 5;
+
+    // Animación
+    function animate() {
+      requestAnimationFrame(animate);
+      if (model) model.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+
+</html>
