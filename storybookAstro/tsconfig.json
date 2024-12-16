@@ -1,0 +1,20 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,     // Habilita la interoperabilidad con módulos CommonJS
+    "module": "ESNext",          // Usar el módulo ESNext
+    "target": "ESNext",          // Usar el target ESNext para compatibilidad moderna
+    "skipLibCheck": true,
+    
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}
