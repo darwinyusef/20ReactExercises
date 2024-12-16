@@ -59,9 +59,9 @@ const styles = {
 };
 
 // Agregar PropTypes para validación de la propiedad btnColor
-Card.propTypes = {
+/*Card.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     onCapture: PropTypes.func.isRequired,
     btnColor: PropTypes.oneOf(['red', 'green', 'gold']),  // Validación de btnColor
-};
+};*/
