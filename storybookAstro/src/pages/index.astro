@@ -1,8 +1,10 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import { FirstComponent } from "../components/FirstComponent";
 ---
 
 <Layout>
-	<Welcome />
+  <FirstComponent client:load  info="Material a definir" />
+  <Welcome />
 </Layout>

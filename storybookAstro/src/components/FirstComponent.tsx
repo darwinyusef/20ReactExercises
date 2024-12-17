@@ -1,13 +1,13 @@
 import React from 'react';
 
 export interface FirstComponentProps {
-  info: string; // Puedes cambiar el tipo de 'info' si es un objeto o array, etc.
+  info: string;
 }
 
 export const FirstComponent: React.FC<FirstComponentProps> = ({ info }) => {
   return (
     <div>
-      <h1>FirstComponent</h1>
+      <h1>Establecer un contenido</h1>
       <p>{info}</p>
     </div>
   );

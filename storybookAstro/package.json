@@ -9,7 +9,7 @@
     "astro": "astro",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest"
+    "test": "vitest" 
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
