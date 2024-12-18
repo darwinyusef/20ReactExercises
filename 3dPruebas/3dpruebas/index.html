@@ -2,82 +2,147 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Model Viewer</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot animación</title>
+    <style>
+        /* Asegura que la escena ocupe toda la pantalla */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: red;
+        }
 
-    #container {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-    }
+        header {
+            display: flex;
+            justify-content: center;
+        }
 
-    canvas {
-      display: block;
-    }
+        #container {
+            width: 95vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    #controls {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      color: white;
-      border-radius: 10px;
-      font-family: Arial, sans-serif;
-    }
+        #controls {
+            width: 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            right: 20px;
+            bottom: 20px;
+            z-index: 10;
+        }
 
-    input {
-      margin: 5px;
-    }
+        #controls button {
+            position: relative;
+            filter: brightness(1.2);
+            padding: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            text-shadow: -4px 4px 13px rgba(0, 0, 0, 0.73);
+        }
 
-    label {
-      display: block;
-    }
+        #controls button:hover {
+            right: -5px;
+        }
 
-    #controls label {
-      font-size: 14px;
-    }
-  </style>
+        #controls button:hover span {
+            display: block;
+        }
+
+        #controls button>span {
+            position: absolute;
+            right: 50px;
+            top: 40%;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            padding: 3px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #3F51B5;
+            display: none;
+        }
+
+        #ia1 {
+            position: absolute;
+            right: 16%;
+            top: 45%;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 3;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow:
+                0 0 0 1px black,
+                0 0 0 2px black,
+                0 0 0 2px black;
+        }
+
+        #ia1:hover {
+            box-shadow:
+                0 0 0 1px orangered,
+                0 0 0 4px orangered,
+                0 0 0 4px orangered;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="container"></div>
-  <div id="controls">
-    <h3>Controles Estáticos</h3>
-    <form id="form-controls">
-      <label for="positionX">Posición X:</label>
-      <input type="number" id="positionX" value="0" step="0.1">
-
-      <label for="positionY">Posición Y:</label>
-      <input type="number" id="positionY" value="0" step="0.1">
-
-      <label for="positionZ">Posición Z:</label>
-      <input type="number" id="positionZ" value="0" step="0.1">
-
-      <label for="rotationX">Rotación X:</label>
-      <input type="number" id="rotationX" value="0" step="0.1">
-
-      <label for="rotationY">Rotación Y:</label>
-      <input type="number" id="rotationY" value="0" step="0.1">
-
-      <label for="rotationZ">Rotación Z:</label>
-      <input type="number" id="rotationZ" value="0" step="0.1">
-
-      <label for="scale">Escala:</label>
-      <input type="number" id="scale" value="1" step="0.1" min="0.1" max="10">
-    </form>
-  </div>
-  <script type="module" src="/src/animation.js"></script>
+    <div id="ia1">
+        <span data-action="Yes">
+            🤖 - Pregunta, acerca de mi lo que quieras ❔
+        </span>
+    </div>
+    <header>
+        <div id="container"></div>
+        <div id="controls">
+            <button data-action="Walking">🚶🏼‍♂️ <span>Walking</span></button>
+            <button data-action="Running">🏃🏼‍♂️ <span>Running</span></button>
+            <button data-action="Dance">🕺🏼 <span>Dance</span></button>
+            <button data-action="Death">💀 <span>Death</span></button>
+            <button data-action="Jump">🦗 <span>Jump</span></button>
+            <button data-action="Wave">👋🏼 <span>Wave</span></button>
+            <button data-action="Punch">👊🏼 <span>Punch</span></button>
+            <button data-action="ThumbsUp">👍🏼 <span>ThumbsUp</span></button>
+            <!-- <button data-action="Yes">👌🏼 <span>Yes</span></button>
+            <button data-action="No">🙅🏼‍♀️ <span>No</span></button> -->
+            <button data-action="Sitting">🪑 <span>Sitting</span></button>
+        </div>
+    </header>
+    <div>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officia molestias maxime ratione commodi
+            possimus omnis corrupti voluptatibus, laborum at nobis doloremque iste, rem id incidunt? In, ipsum sed
+            provident corporis atque, dicta alias, quas doloribus maiores itaque totam? Eum, accusamus. Quae
+            perspiciatis, sapiente libero, rerum voluptates reprehenderit exercitationem quasi quis tempore earum
+            aperiam non corrupti vero corporis quos nobis voluptate officia repellendus vel aut? Magni architecto quia
+            id alias veritatis nam, et excepturi dicta, blanditiis autem neque fugit. Quis quidem architecto magnam quo
+            maiores eos? Amet dolore repudiandae perspiciatis qui cumque! Vero nobis deserunt neque aperiam deleniti
+            eaque nisi dolore quaerat necessitatibus odit? Repudiandae quas magnam odio vel architecto, minus, eveniet
+            mollitia praesentium eos dicta eius recusandae delectus cumque voluptatum pariatur voluptatem necessitatibus
+            culpa quasi sed veniam dolorum! Odio pariatur at veniam dolorum deleniti! Aut delectus laborum nam,
+            doloribus accusamus nemo illum tempora eligendi nesciunt consequuntur voluptates minus. Reiciendis, minima
+            officia. Delectus quos quibusdam laborum nostrum aut eius ex architecto consectetur, recusandae hic est
+            autem soluta. Sunt quasi officia, quas, excepturi consequatur soluta blanditiis debitis vel harum aspernatur
+            dolor aperiam enim voluptatem dolores voluptas nulla architecto doloremque ratione quos in. Minima
+            accusantium provident vel quibusdam? At blanditiis ea unde adipisci ab illo perspiciatis explicabo
+            necessitatibus mollitia quas possimus magnam placeat minus temporibus odio veritatis officiis dignissimos
+            optio nulla, iusto voluptatibus nesciunt. Soluta id velit dicta eaque voluptatum deleniti, consequuntur
+            minima, exercitationem molestiae dolore ducimus vero amet modi nemo non in pariatur! Hic inventore ullam
+            dolorum similique, quibusdam omnis expedita nam iusto excepturi reprehenderit vitae quo minus eligendi
+            numquam, cupiditate deserunt eaque aspernatur tempore fugiat reiciendis nobis libero ex! Fugit quos, maxime
+            magnam harum quasi hic obcaecati tenetur ullam? Explicabo cumque enim earum unde accusamus nostrum,
+            similique excepturi vitae quasi rem doloribus ipsum suscipit. Velit quasi hic qui ducimus animi?</h1>
+    </div>
+    <!-- Integración del archivo JavaScript -->
+    <script type="module" src="/src/pequenito.js"></script>
 </body>
 
 </html>

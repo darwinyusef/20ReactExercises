@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Interaction</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #tresD {
+            position: relative;
+            z-index: 1;
+            width: 100vw;
+            height: 200vh;
+            margin-top: 30px;
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .text {
+            position: absolute;
+            top: 20px;
+        }
+
+        .text h1 {
+            color: #fff;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu {
+            width: 100%;
+            background: red;
+            z-index: 2;
+            position: fixed;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="https://github.com/yusefgonzalez">Github</a></li>
+        </ul>
+    </nav>
+    <!-- Contenedor de la escena -->
+    <div id="tresD">
+        <div class="text">
+            <h1>Hola a todos soy Yusef gonzalez</h1>
+        </div> 
+    </div>
+
+    <!-- Botones para interactuar -->
+    <div id="controls">
+        <button id="scaleUpButton">Aumentar tamaño</button>
+        <button id="scaleDownButton">Reducir tamaño</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script type="module" src="/src/emblem3d.js"></script>
+</body>
+
+</html>
