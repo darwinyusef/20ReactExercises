@@ -1,0 +1,15 @@
+---
+import { fetchUsers } from "../scripts/api.ts";
+const users = await fetchUsers();
+---
+
+<h2>Datos obtenidos de la API:</h2>
+<ul>
+  {
+    users.map((user) => (
+      <li>
+        {user.name} - {user.email}
+      </li>
+    ))
+  }
+</ul>

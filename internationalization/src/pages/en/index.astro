@@ -1,0 +1,19 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+const astro = Astro;
+const aboutURL = getRelativeLocaleUrl("en", "/about", {
+  prependWith: "blog",
+});
+---
+
+<Layout>
+  <a href="/salimos/">¡Vamos!</a>
+  <a href={aboutURL}>Acerca</a>
+  {getLangFromUrl(astro.url)} -
+  {useTranslations(getLangFromUrl(astro.url))("principal.button")}
+  <h1>{useTranslations(getLangFromUrl(astro.url))("blog.title")}</h1>
+  <h3>{useTranslations(getLangFromUrl(astro.url))("blog.subtitle")}</h3>
+  <p>{useTranslations(getLangFromUrl(astro.url))("blog.text")}</p>    
+</Layout>

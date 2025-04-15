@@ -1,0 +1,7 @@
+{
+  "paths": [
+    { "params": { "slug": "one", "lang": "es" } },
+    { "params": { "slug": "two", "lang": "en" } },
+    { "params": { "slug": "three", "lang": "es" } }
+  ]
+}

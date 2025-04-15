@@ -1,0 +1,14 @@
+---
+import { handleFormSubmit } from "../scripts/formHandler.ts";
+---
+
+<form id="dataForm">
+  <input type="text" id="name" placeholder="Nombre" required />
+  <input type="email" id="email" placeholder="Correo" required />
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+  import { handleFormSubmit } from "../scripts/formHandler.ts";
+  document.getElementById("dataForm")?.addEventListener("submit", handleFormSubmit);
+</script>

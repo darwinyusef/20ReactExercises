@@ -1,0 +1,211 @@
+@import url("./font-face-config");
+
+:root {
+  --boxpic-blue: #093450;
+  --boxpic-ligth-blue: #067eed;
+  --boxpic-orange: #f9b801;
+  --boxpic-light-red: #fdefed;
+  --boxpic-gray: #F6F7F7;
+}
+
+h1 {
+  font-family: Stolzl sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: Stolzl sans-serif;
+  font-weight: bold;
+}
+
+.logo {
+    margin-top: 3vh;
+    margin-left: 12vh;
+}
+
+nav {
+    background-color: var(--boxpic-blue);
+    padding-bottom: 20px;
+}
+
+nav .menu {
+    margin-left: 2vh; 
+    margin-top: 5vh;
+    font-family: Stolzl sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 2rem;
+}
+
+nav ul.menu li {
+    display: inline-block;
+    font-family: Stolzl, sans-serif;
+    color: white;
+    font-size: 16px;
+    line-height: 118.75%;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-left: 1.7rem;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-top: 10px;
+    padding-right: 5vh;
+}
+.login h3 {
+    font-family: Stolzl;
+    font-style: normal;
+    font-weight: 500;
+    color:white;
+    font-size: 16px;
+    line-height: 19px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.login .btn-signup{
+    width: 123px;
+    height: 50px;
+    left: 1157px;
+    top: 0px;    
+    background: var(--boxpic-ligth-blue);
+    border-radius: 10px;
+    font-family: Stolzl;
+    font-style: normal;
+    font-weight: 500;
+    color:white;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+header {
+    padding-top: 5vh;
+    background: var(--boxpic-blue);
+    color: white;
+}
+
+/* column 1*/
+header .btn-boxpic-yellow{
+    background-color: var(--boxpic-orange);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 25px;
+    border-radius: 50px;
+}
+
+header .btn-boxpic-yellow p {
+    display: inline-block;
+    font-family: Stolzl;
+    font-style: normal;
+    margin-left: 20px;
+    margin-top: 15px;
+    position: relative;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+header .btn-boxpic-yellow img {
+    display: inline-block;
+    width: 25px;
+}
+
+header .btn-boxpic-yellow{
+    zoom: 0.9;
+}
+
+header h1{
+    margin-top: 10vh;
+    font-family: Stolzl;
+    font-style: normal;
+    color: white;
+    font-size: 3em;
+    line-height: 125%;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+header h1 span{
+    color: var(--boxpic-orange)
+}
+
+header .download-app-top ul{
+    margin-top: 10vh;
+    padding-left: 0px;
+    padding-bottom: 5vh;
+}
+
+header .download-app-top ul li{
+    display: inline-block;
+}
+
+header .download-app-top ul li:first-child{
+    margin-right: 8vh;
+}
+
+
+/* column 2*/
+header .mobile-header{
+    padding-top: 8vh;
+    text-align: center; 
+    margin-bottom: -10vh;
+}
+header .mobile-header img{
+    width: 500px;
+    position: absolute;
+}
+
+
+section .presentation{
+    width: 1280px;
+    background-color: var(--boxpic-gray); 
+}
+
+section .presentation .title h1{
+    font-family: Stolzl sans-serif;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 1600px) {
+    
+}
+@media screen and (max-width: 1440px) {
+    
+}
+
+@media screen and (max-width: 1200px) {
+    nav{
+        zoom: 0.9;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav ul.menu{
+        display: none; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (min-width: 576px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+    
+}
+
+
+
+
+

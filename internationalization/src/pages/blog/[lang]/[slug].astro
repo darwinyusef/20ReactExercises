@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+export async function getStaticPaths() {
+  fetch("staticPaths.json", { method: "GET" })
+  .then((res) => res.json())
+  .then((res) => {
+    if (res.ok) {
+      console.log(res);
+      return res.paths;
+    }
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+}
+const aboutURL = getRelativeLocaleUrl("es", "/about", {
+  prependWith: "blog",
+});
+const { slug, lang } = Astro.params;
+---
+
+<p>
+  Hola {slug}, {lang}
+  {aboutURL}
+</p>
